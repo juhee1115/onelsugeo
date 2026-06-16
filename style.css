@@ -1,6 +1,32 @@
+/* Color styles */
+:root {
+  --m-a-i-n: rgba(188, 222, 233, 1);
+  --e-m-p: rgba(32, 52, 101, 1);
+  --b-a-s-i-c: rgba(0, 0, 0, 1);
+
+  /* Text-size styles */
+  --b-u-t-t-o-n: 35px;
+  --h-e-r-o---t-i-t-l-e: 80px;
+  --h-e-r-o---s-u-b_-t-i-t-l-e: 70px;
+  --main---title: 65px;
+  --main--sub: 30px;
+  --d-e-s-c---l: 50px;
+  --d-e-s-c---m: 35px;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: "LotteMartDream";
+  src:
+    url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2")
+      format("woff2"),
+    url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff")
+      format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
 /* RESET */
-
-
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +38,35 @@ img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-weight: normal;
+}
+
+
+/* inner */
+
+.inner{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
 
 /* 네비 */
 
@@ -20,7 +75,7 @@ img {
   top: 0;
   z-index: 999;
   height: 80px;
-  background: #f5f5f5;
+  background: #ffffff;
   border-bottom: 1px solid #d8d8d8;
 }
 
@@ -28,16 +83,10 @@ img {
   max-width: 1440px;
   height: 100%;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 60px;
-}
-
-.nav__logo img {
-  height: 42px;
 }
 
 .nav__links {
@@ -47,24 +96,20 @@ img {
 }
 
 .nav__link {
-  color: #1e377d;
+  color: var(--e-m-p);
   text-decoration: none;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 15px;
+  font-family: "LotteMartDream";
 }
 
 .nav__download-btn {
   padding: 12px 24px;
-
-  border: 2px solid #1e377d;
+  border: 1px solid var(--e-m-p);
   border-radius: 18px;
-
-  color: #1e377d;
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: 700;
-
+  color: var(--e-m-p);
+  font-size: 15px;
   transition: 0.3s;
+  font-family: "LotteMartDream";
 }
 
 .nav__download-btn:hover {
@@ -73,7 +118,6 @@ img {
 }
 
 /* HERO - TOP */
-
 .hero-top {
   position: relative;
   height: 1080px;
@@ -83,49 +127,37 @@ img {
 .hero-top__inner {
   max-width: 1600px;
   height: 100%;
-
   margin: 0 auto;
   padding-top: 80px;
-
   position: relative;
   text-align: center;
 }
 
 /* 배경 텍스트 */
-
 .hero-bg {
   position: absolute;
   left: 50%;
   top: 250px;
-
   transform: translateX(-50%);
-
-  font-size: 400px;
-  font-weight: 900;
+  font-size: 500px;
   letter-spacing: -10px;
-
-  color: rgba(31, 55, 125, 0.05);
-
+  color: #bcdee962;
   white-space: nowrap;
   pointer-events: none;
   z-index: 1;
 }
 
-/* =========================
-   TITLE
-========================= */
+/* 타이틀 */
 
 .hero-title {
   position: relative;
   z-index: 20;
-  font-size: 84px;
-  font-weight: 900;
-
-  color: #b8d8e5;
+  font-size: var(--h-e-r-o---t-i-t-l-e);
+  color: var(--m-a-i-n);
 }
 
 .hero-title span {
-  color: #1e377d;
+  color: var(--e-m-p);
 }
 
 /* 비주얼 */
@@ -141,23 +173,17 @@ img {
 
 .hero-bin {
   position: absolute;
-
   left: 50%;
   bottom: -250px;
-
   transform: translateX(-50%);
-
   width: 780px;
-
   z-index: 15;
 }
 
 /* 아이템즈 */
-
 .trash-item {
   position: absolute;
   z-index: 20;
-
   animation: float 3s ease-in-out infinite;
 }
 
@@ -212,7 +238,6 @@ img {
   }
 }
 
-
 /* HERO - BOTTOM */
 
 .hero-bottom {
@@ -223,44 +248,29 @@ img {
 .hero-bottom__inner {
   max-width: 1200px;
   margin: 0 auto;
-
   padding-top: 380px;
-
   text-align: center;
 }
 
 .hero-bottom h2 {
-  font-size: 50px;
+  font-size: var(--d-e-s-c---l);
   line-height: 1.3;
-
-  color: #000;
+  color: var(--b-a-s-i-c);
 }
 
-
-/* =========================
-   CTA
-========================= */
+/* CTA */
 
 .hero-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   margin-top: 50px;
-
   width: 320px;
   height: 88px;
-
   border-radius: 999px;
-
-  background: #b8d8e5;
-
-  color: #1e377d;
-  text-decoration: none;
-
-  font-size: 32px;
-  font-weight: 800;
-
+  background: var(--m-a-i-n);
+  color: var(--e-m-p);
+  font-size: var(--b-u-t-t-o-n);
   transition: 0.3s;
 }
 
@@ -268,21 +278,19 @@ img {
   transform: translateY(-4px);
 }
 
-
 /* 몬제제기 */
 
 .problem {
   padding: 160px 0;
-  background: #f5f5f5;
 }
 
 .problem h2 {
   text-align: center;
-  font-size: 50px;
-  font-weight: 900;
+
+  font-size: var(--main---title);
   line-height: 1.2;
   margin-bottom: 60px;
-  color: #111;
+  color: var(--b-a-s-i-c);
 }
 
 /* 웨이브 영역 */
@@ -291,41 +299,8 @@ img {
   max-width: 1600px;
   margin: 0 auto;
   padding: 100px 80px;
-
-  background: #eaf3f6;
+  background: #bcdee93d;
   border-radius: 120px;
-}
-
-/* 위쪽 곡선 */
-.problem-wave::before {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: 0;
-
-  width: 100%;
-  height: 100px;
-
-  background: #f5f5f5;
-
-  border-bottom-left-radius: 50% 100%;
-  border-bottom-right-radius: 50% 100%;
-}
-
-/* 아래쪽 곡선 */
-.problem-wave::after {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-
-  width: 100%;
-  height: 100px;
-
-  background: #f5f5f5;
-
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
 }
 
 .problem-grid {
@@ -360,17 +335,16 @@ img {
 }
 
 .problem-box p {
-  font-size: 32px;
-  font-weight: 700;
-  color: #233f8d;
+  font-size: var(--d-e-s-c---l);
+  font-family: "LotteMartDream";
+  color: var(--b-a-s-i-c);
   line-height: 1.4;
 }
 
 /* 어떤 물건 */
-
 .items {
   padding: 180px 0;
-  background: #f5f5f5;
+
 }
 
 .container {
@@ -387,17 +361,16 @@ img {
 
   margin-bottom: 100px;
 
-  font-size: 64px;
-  font-weight: 900;
-  color: #223b82;
+  font-size: var(--main---title);
+  color: var(--e-m-p);
 }
 
 .items-title span {
-  color: #53c1ff;
+  color: var(--m-a-i-n);
 }
 
 .items-title img {
-  width: 40px;
+  width: 70px;
 }
 
 /* 그리드 */
@@ -416,9 +389,7 @@ img {
   width: 180px;
   height: 180px;
   object-fit: contain;
-
   margin: 0 auto 20px;
-
   transition: 0.3s ease;
 }
 
@@ -427,8 +398,181 @@ img {
 }
 
 .item-card p {
-  font-size: 28px;
+  font-size: var(--d-e-s-c---m);
   line-height: 1.4;
+  font-family: "LotteMartDream";
+  color: var(--b-a-s-i-c);
+}
+
+
+/* how */
+
+.how {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.how-title {
+  text-align: center;
+  font-size: var(--main---title);
+  color: var(--b-a-s-i-c);
+ 
+}
+
+.how-title span {
+  color: var(--m-a-i-n);
+}
+
+/* 물결 배경 */
+.how-wave {
+  position: absolute;
+  top: 150px;
+  left: -5%;
+  width: 110%;
+  height: 1090px;
+  background: #bcdee949;
+  border-radius: 50% 50% 50% 50% / 30% 30% 30% 30%;
+  z-index: -999;
+}
+
+.how-steps {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.how-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.how-step img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+.how-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #185FA5;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0.75rem 0 6px;
+}
+
+.how-step p {
+  font-size: var(--d-e-s-c---m);
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+/* 지그재그 높낮이 */
+.how-step:nth-child(1) { margin-bottom: 100px; }
+.how-step:nth-child(2) { margin-bottom: 50px; }
+.how-step:nth-child(3) { margin-bottom: 0;    }
+
+/* 서비스 */
+/* === Service Section === */
+.servce {
+  text-align: center;
+}
+
+.servce-title h1 {
+  font-size: var(--main---title);
+  color: var(--b-a-s-i-c);
+}
+
+.servce-title p {
+  font-size: var(--main--sub);
+  color: var(--m-a-i-n);
+  padding-bottom: 50px;
+}
+
+/* 카드 그리드 */
+.servce ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.servce ul li a {
+  display: block;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.servce ul li a:hover {
+  border-color: #aac8ef;
+  transform: translateY(-3px);
+}
+
+/* 카드 이미지 */
+.servce ul li a img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+/* 푸터 */
+
+.footer {
+  background: var(--e-m-p);
+  color: white;
+  padding: 2.5rem 2rem;
+  font-family: "LotteMartDream";
+}
+
+.footer-tagline {
+  font-size: var(--d-e-s-c---m);
+}
+
+/* SNS 아이콘 */
+.footer-sns {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+
+/* 사업자 정보 */
+.footer-info {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-info p {
+  margin: 0;
+}
+
+.footer-info b {
+  color: #fff;
   font-weight: 600;
-  color: #233f8d;
+}
+
+.footer-info a {
+  line-height: 1.5px;
+  color: rgba(255, 255, 255, 0.85);
+
+}
+
+.footer-info a:hover {
+  color: #fff;
+
 }
